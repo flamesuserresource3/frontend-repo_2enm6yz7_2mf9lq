@@ -14,42 +14,40 @@ export default function BillingAndAutomation({ role }) {
         <div className="lg:col-span-3">
           <div className="flex items-end justify-between">
             <div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-slate-900">Invoices</h2>
-              <p className="text-slate-600 text-sm mt-1">View invoices, payment status, and history.</p>
+              <h2 className="text-xl sm:text-2xl font-semibold text-black">Invoices</h2>
+              <p className="text-black/70 text-sm mt-1">View invoices, payment status, and history.</p>
             </div>
             {role === 'internal' && (
-              <button className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-blue-600 bg-blue-600 px-3 py-2 text-sm text-white shadow-sm hover:bg-blue-700">
+              <button className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-[#B10100] bg-[#B10100] px-3 py-2 text-sm text-white shadow-sm hover:opacity-90">
                 <FileText className="h-4 w-4" /> Upload Invoice
               </button>
             )}
           </div>
 
-          <div className="mt-4 rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <div className="divide-y divide-slate-100">
+          <div className="mt-4 rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden">
+            <div className="divide-y divide-black/5">
               {invoices.map((inv) => (
                 <div key={inv.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-lg bg-slate-50 border border-slate-200 inline-flex items-center justify-center text-slate-600">
+                    <div className="h-10 w-10 rounded-lg bg-black/5 border border-black/10 inline-flex items-center justify-center text-black/70">
                       <CreditCard className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{inv.id} • {inv.client}</p>
-                      <p className="text-xs text-slate-500">{inv.due}</p>
+                      <p className="font-medium text-black">{inv.id} • {inv.client}</p>
+                      <p className="text-xs text-black/60">{inv.due}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 w-full sm:w-auto">
-                    <span className="text-slate-900 font-semibold">${inv.amount.toLocaleString()}</span>
-                    <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs ${
+                    <span className="text-black font-semibold">${inv.amount.toLocaleString()}</span>
+                    <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs border ${
                       inv.status === 'Paid'
-                        ? 'bg-emerald-50 text-emerald-700'
-                        : inv.status === 'Due'
-                        ? 'bg-rose-50 text-rose-700'
-                        : 'bg-amber-50 text-amber-700'
+                        ? 'border-black/20 text-black'
+                        : 'border-[#B10100] text-[#B10100]'
                     }`}>
                       {inv.status}
                     </span>
                     {role === 'internal' && (
-                      <button className="ml-auto rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50">
+                      <button className="ml-auto rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5">
                         Mark as {inv.status === 'Paid' ? 'Unpaid' : 'Paid'}
                       </button>
                     )}
@@ -61,64 +59,64 @@ export default function BillingAndAutomation({ role }) {
         </div>
 
         <div className="lg:col-span-2">
-          <h2 className="text-xl sm:text-2xl font-semibold text-slate-900">WhatsApp Automation</h2>
-          <p className="text-slate-600 text-sm mt-1">Automatic reminders for payments, milestones and approvals.</p>
+          <h2 className="text-xl sm:text-2xl font-semibold text-black">WhatsApp Automation</h2>
+          <p className="text-black/70 text-sm mt-1">Automatic reminders for payments, milestones and approvals.</p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-black/10 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-emerald-50 text-emerald-700 inline-flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-[#B10100]/10 text-[#B10100] inline-flex items-center justify-center">
                     <Send className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Payment due reminders</p>
-                    <p className="text-xs text-slate-500">7, 3 and 1 day before due date</p>
+                    <p className="font-medium text-black">Payment due reminders</p>
+                    <p className="text-xs text-black/60">7, 3 and 1 day before due date</p>
                   </div>
                 </div>
                 <label className="inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="peer sr-only" defaultChecked />
-                  <span className="h-5 w-9 rounded-full bg-slate-200 peer-checked:bg-emerald-500 transition-colors relative">
+                  <span className="h-5 w-9 rounded-full bg-black/20 peer-checked:bg-[#B10100] transition-colors relative">
                     <span className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4" />
                   </span>
                 </label>
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-black/10 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-blue-50 text-blue-700 inline-flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-black/5 text-black inline-flex items-center justify-center">
                     <Bell className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Milestone updates</p>
-                    <p className="text-xs text-slate-500">Notify clients upon phase completion</p>
+                    <p className="font-medium text-black">Milestone updates</p>
+                    <p className="text-xs text-black/60">Notify clients upon phase completion</p>
                   </div>
                 </div>
                 <label className="inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="peer sr-only" defaultChecked />
-                  <span className="h-5 w-9 rounded-full bg-slate-200 peer-checked:bg-blue-600 transition-colors relative">
+                  <span className="h-5 w-9 rounded-full bg-black/20 peer-checked:bg-[#B10100] transition-colors relative">
                     <span className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4" />
                   </span>
                 </label>
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-black/10 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-amber-50 text-amber-700 inline-flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-lg bg-black/5 text-black inline-flex items-center justify-center">
                     <Send className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-900">Task / approval nudges</p>
-                    <p className="text-xs text-slate-500">Escalate if no response in 48h</p>
+                    <p className="font-medium text-black">Task / approval nudges</p>
+                    <p className="text-xs text-black/60">Escalate if no response in 48h</p>
                   </div>
                 </div>
                 <label className="inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="peer sr-only" defaultChecked />
-                  <span className="h-5 w-9 rounded-full bg-slate-200 peer-checked:bg-amber-500 transition-colors relative">
+                  <span className="h-5 w-9 rounded-full bg-black/20 peer-checked:bg-[#B10100] transition-colors relative">
                     <span className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-4" />
                   </span>
                 </label>

@@ -14,19 +14,19 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-black">
       {/* Top Nav */}
-      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/80 backdrop-blur">
+      <header className="sticky top-0 z-20 border-b border-black/10 bg-white/80 backdrop-blur">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-blue-600 to-indigo-600" />
+            <div className="h-8 w-8 rounded-md bg-[#B10100]" />
             <span className="font-semibold">Agency Portal</span>
           </div>
           <div className="flex items-center gap-3">
-            <button className="hidden sm:inline-flex rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 hover:bg-slate-50">
+            <button className="hidden sm:inline-flex rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5">
               Sign in with Google
             </button>
-            <div className="text-xs text-slate-500">Role: {role}</div>
+            <div className="text-xs text-black/60">Role: {role}</div>
           </div>
         </div>
       </header>
@@ -44,8 +44,8 @@ function App() {
       <BillingAndAutomation role={role} />
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-sm text-slate-500">
+      <footer className="border-t border-black/10 py-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-sm text-black/60">
           © {new Date().getFullYear()} Digital Marketing Agency • All rights reserved
         </div>
       </footer>
