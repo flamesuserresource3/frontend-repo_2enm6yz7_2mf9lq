@@ -22,7 +22,7 @@ export default function Hero({ role, onChangeRole }) {
               <div className="inline-flex rounded-lg border border-black/10 bg-white p-1">
                 <button
                   onClick={() => onChangeRole('client')}
-                  className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+                  className={`px-3 py-1.5 text-sm rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                     role === 'client' ? 'bg-[#B10100] text-white' : 'text-black hover:bg-black/5'
                   }`}
                 >
@@ -30,7 +30,7 @@ export default function Hero({ role, onChangeRole }) {
                 </button>
                 <button
                   onClick={() => onChangeRole('internal')}
-                  className={`px-3 py-1.5 text-sm rounded-md transition-colors ${
+                  className={`px-3 py-1.5 text-sm rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                     role === 'internal' ? 'bg-[#B10100] text-white' : 'text-black hover:bg-black/5'
                   }`}
                 >

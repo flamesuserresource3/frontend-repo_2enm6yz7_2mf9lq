@@ -18,7 +18,7 @@ export default function BillingAndAutomation({ role }) {
               <p className="text-black/70 text-sm mt-1">View invoices, payment status, and history.</p>
             </div>
             {role === 'internal' && (
-              <button className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-[#B10100] bg-[#B10100] px-3 py-2 text-sm text-white shadow-sm hover:opacity-90">
+              <button className="hidden sm:inline-flex items-center gap-2 rounded-lg border border-[#B10100] bg-[#B10100] px-3 py-2 text-sm text-white shadow-sm hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white">
                 <FileText className="h-4 w-4" /> Upload Invoice
               </button>
             )}
@@ -47,7 +47,7 @@ export default function BillingAndAutomation({ role }) {
                       {inv.status}
                     </span>
                     {role === 'internal' && (
-                      <button className="ml-auto rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5">
+                      <button className="ml-auto rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white">
                         Mark as {inv.status === 'Paid' ? 'Unpaid' : 'Paid'}
                       </button>
                     )}

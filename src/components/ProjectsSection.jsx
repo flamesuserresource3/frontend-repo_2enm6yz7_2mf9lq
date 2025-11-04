@@ -54,7 +54,7 @@ export default function ProjectsSection({ role }) {
             <p className="text-black/70 text-sm mt-1">Active, pending and completed projects with timelines and tasks.</p>
           </div>
           <button
-            className={`hidden sm:inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm shadow-sm transition-colors ${
+            className={`hidden sm:inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
               role === 'internal'
                 ? 'border-[#B10100] bg-[#B10100] text-white hover:opacity-90'
                 : 'border-black/10 bg-white text-black hover:bg-black/5'
@@ -115,7 +115,7 @@ export default function ProjectsSection({ role }) {
               </ul>
 
               <div className="mt-4 flex justify-end">
-                <button className="rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5">View details</button>
+                <button className="rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white">View details</button>
               </div>
             </article>
           ))}

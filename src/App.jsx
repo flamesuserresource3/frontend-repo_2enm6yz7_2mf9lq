@@ -23,7 +23,7 @@ function App() {
             <span className="font-semibold">Agency Portal</span>
           </div>
           <div className="flex items-center gap-3">
-            <button className="hidden sm:inline-flex rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5">
+            <button className="hidden sm:inline-flex rounded-lg border border-black/10 bg-white px-3 py-1.5 text-sm text-black hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B10100] focus-visible:ring-offset-2 focus-visible:ring-offset-white">
               Sign in with Google
             </button>
             <div className="text-xs text-black/60">Role: {role}</div>
